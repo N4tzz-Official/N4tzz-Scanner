@@ -33,7 +33,7 @@ def scan_js_links(file_path, output_path=None):
     for url in urls:
         try:
             response = requests.get(url)
-            response.raise_for_status()  # Raise an error for bad responses
+            response.raise_for_status()
             
             js_files = re.findall(r'https?://[^"\s]+\.js', response.text)
             js_links[url] = js_files
